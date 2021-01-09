@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8A611A5-95B4-4B29-BCD2-D26C7AF4705E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hotspot</RootNamespace>
+    <AssemblyName>Hotspot</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Hotspot.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E9BB649FDAC5CF1F787FAF156BC7F16C5525EE2F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Cryto.cs" />
+    <Compile Include="Classes\Network.cs" />
+    <Compile Include="Controls\GridList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Hotspot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hotspot.Designer.cs">
+      <DependentUpon>Hotspot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Native\Iphlpapi\Enums\ADDRESS_FAMILY.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\IFTYPE.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\IF_OPER_STATUS.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\IPTypes.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\MIB_IF_ENTRY_LEVEL.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\MIB_NOTIFICATION_TYPE.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\NDIS_MEDIUM.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\NDIS_PHYSICAL_MEDIUM.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\NET_IF_ACCESS_TYPE.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\NET_IF_ADMIN_STATUS.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\NET_IF_CONNECTION_TYPE.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\NET_IF_DIRECTION_TYPE.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\NET_IF_MEDIA_CONNECT_STATE.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\NL_LINK_LOCAL_ADDRESS_BEHAVIOR.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\NL_ROUTER_DISCOVERY_BEHAVIOR.cs" />
+    <Compile Include="Native\Iphlpapi\Enums\TUNNEL_TYPE.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\GUID.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\IP_ADAPTER_ADDRESSES.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\IP_ADAPTER_INFO.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\IP_ADDRESS_STRING.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\IP_ADDR_STRING.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\IP_PEER_ADAPTER_INFO_W2KSP1.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\MIB_IF_ROW2.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\MIB_IPINTERFACE_ROW.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\MIB_IPINTERFACE_TABLE.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\NL_BANDWIDTH_INFORMATION.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\NL_INTERFACE_OFFLOAD_ROD.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\SOCKADDR.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\SOCKET_ADDRESS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\Settings.cs" />
+    <Compile Include="Classes\Taskschd.cs" />
+    <Compile Include="ICSRouter.cs" />
+    <Compile Include="Native\advapi32.cs" />
+    <Compile Include="Native\Iphlpapi\iphlpapi.cs" />
+    <Compile Include="Native\Wlanapi\Structs\DOT11_AUTH_CIPHER_PAIR.cs" />
+    <Compile Include="Native\Wlanapi\Structs\EAP_METHOD_TYPE.cs" />
+    <Compile Include="Native\Wlanapi\Structs\EAP_TYPE.cs" />
+    <Compile Include="Native\Wlanapi\Structs\DOT11_BSSID_LIST.cs" />
+    <Compile Include="Native\Wlanapi\Structs\DOT11_MAC_ADDRESS.cs" />
+    <Compile Include="Native\Wlanapi\Structs\DOT11_NETWORK.cs" />
+    <Compile Include="Native\Wlanapi\Structs\DOT11_NETWORK_LIST.cs" />
+    <Compile Include="Native\Wlanapi\Structs\DOT11_SSID.cs" />
+    <Compile Include="Native\Wlanapi\Enums\DOT11_AUTH_ALGORITHM.cs" />
+    <Compile Include="Native\Wlanapi\Enums\DOT11_BSS_TYPE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\DOT11_CIPHER_ALGORITHM.cs" />
+    <Compile Include="Native\Wlanapi\Enums\DOT11_PHY_TYPE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\DOT11_RADIO_STATE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\ONEX_AUTH_IDENTITY.cs" />
+    <Compile Include="Native\Wlanapi\Enums\ONEX_AUTH_RESTART_REASON.cs" />
+    <Compile Include="Native\Wlanapi\Enums\ONEX_AUTH_STATUS.cs" />
+    <Compile Include="Native\Wlanapi\Enums\ONEX_EAP_METHOD_BACKEND_SUPPORT.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_NOTIFICATION_SOURCE_ONEX.cs" />
+    <Compile Include="Native\Wlanapi\Enums\ONEX_REASON_CODE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_ADHOC_NETWORK_STATE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_AUTOCONF_OPCODE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_CONNECTION_MODE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_FILTER_LIST_TYPE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_HOSTED_NETWORK_NOTIFICATION_CODE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_HOSTED_NETWORK_OPCODE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_HOSTED_NETWORK_PEER_AUTH_STATE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_HOSTED_NETWORK_REASON.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_HOSTED_NETWORK_STATE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_IHV_CONTROL_TYPE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_INTERFACE_STATE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_INTERFACE_TYPE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_INTF_OPCODE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_NOTIFICATION_ACM.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_NOTIFICATION_MSM.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_OPCODE_VALUE_TYPE.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_POWER_SETTING.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_SECURABLE_OBJECT.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WL_DISPLAY_PAGES.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\MIB_IFROW.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\MIB_IPNET_ROW2.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\MIB_IPNET_TABLE2.cs" />
+    <Compile Include="Native\Wlanapi\Structs\NDIS_OBJECT_HEADER.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\NET_LUID.cs" />
+    <Compile Include="Native\Wlanapi\Structs\ONEX_AUTH_PARAMS.cs" />
+    <Compile Include="Native\Wlanapi\Structs\ONEX_CONNECTION_PROFILE.cs" />
+    <Compile Include="Native\Wlanapi\Structs\ONEX_EAP_ERROR.cs" />
+    <Compile Include="Native\Wlanapi\Structs\ONEX_RESULT_UPDATE_DATA.cs" />
+    <Compile Include="Native\Wlanapi\Structs\ONEX_STATUS.cs" />
+    <Compile Include="Native\Wlanapi\Structs\ONEX_VARIABLE_BLOB.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\SOCKADDR_IN.cs" />
+    <Compile Include="Native\Iphlpapi\Structs\SOCKADDR_INET.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_AUTH_CIPHER_PAIR_LIST.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_BSS_ENTRY.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_BSS_LIST.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_CONNECTION_NOTIFICATION_DATA.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_COUNTRY_OR_REGION_STRING_LIST.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_INTERFACE_CAPABILITY.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_MAC_FRAME_STATISTICS.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_MSM_NOTIFICATION_DATA.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_PHY_FRAME_STATISTICS.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_PHY_RADIO_STATE.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_RADIO_STATE.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_RATE_SET.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_RAW_DATA.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_RAW_DATA_LIST.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_STATISTICS.cs" />
+    <Compile Include="Native\Wlanapi\wlanapi.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_ASSOCIATION_ATTRIBUTES.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_AVAILABLE_NETWORK.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_AVAILABLE_NETWORK_LIST.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_CONNECTION_ATTRIBUTES.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_CONNECTION_PARAMETERS.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_HOSTED_NETWORK_CONNECTION_SETTINGS.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_HOSTED_NETWORK_DATA_PEER_STATE_CHANGE.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_HOSTED_NETWORK_PEER_STATE.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_HOSTED_NETWORK_RADIO_STATE.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_HOSTED_NETWORK_SECURITY_SETTINGS.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_HOSTED_NETWORK_STATE_CHANGE.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_HOSTED_NETWORK_STATUS.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_INTERFACE_INFO.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_INTERFACE_INFO_LIST.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_NOTIFICATION_DATA.cs" />
+    <Compile Include="Native\Wlanapi\Enums\WLAN_NOTIFICATION_SOURCE.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_PROFILE_INFO.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_PROFILE_INFO_LIST.cs" />
+    <Compile Include="Native\Wlanapi\Structs\WLAN_SECURITY_ATTRIBUTES.cs" />
+    <Compile Include="wlanmgr.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="Hotspot.resx">
+      <DependentUpon>Hotspot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Hotspot.ico" />
+    <Content Include="Resources\wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="NETCONLib">
+      <Guid>{43E734CA-043D-4A70-9A2C-A8F254063D91}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="NETWORKLIST">
+      <Guid>{DCB00D01-570F-4A9B-8D69-199FDBA5723B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="TaskScheduler">
+      <Guid>{E34CB9F1-C7F7-424C-BE29-027DCC09363A}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

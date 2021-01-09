@@ -1,0 +1,11 @@
+﻿
+namespace Native
+{
+    public enum NET_IF_DIRECTION_TYPE
+    {
+        NET_IF_DIRECTION_SENDRECEIVE = 0,
+        NET_IF_DIRECTION_SENDONLY,
+        NET_IF_DIRECTION_RECEIVEONLY,
+        NET_IF_DIRECTION_MAXIMUM
+    }
+}
